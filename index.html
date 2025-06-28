@@ -2,74 +2,22 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Behruz.dev — Верстка сайтов</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Behruz.dev — Фронтенд-разработка</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #0f0f0f;
-      color: #fff;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: #111;
-      padding: 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    header a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1, h2, h3 {
-      color: #fff;
-    }
-    .features {
-      display: grid;
-      gap: 20px;
-    }
-    .feature {
-      background: #1c1c1c;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.05);
-    }
-    form {
-      display: grid;
-      gap: 10px;
-    }
-    input, textarea {
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-    button {
-      background: #fff;
-      color: #000;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
+    body { margin:0; font-family:'Inter',sans-serif; background:#0f0f0f; color:#fff; scroll-behavior:smooth; }
+    header { background:#111; padding:20px; position:sticky; top:0; z-index:10; text-align:center; }
+    header a { color:#fff; margin:0 15px; text-decoration:none; font-weight:600; }
+    section { padding:60px 20px; max-width:900px; margin:auto; }
+    h1,h2,h3 { color:#fff; }
+    .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:20px; }
+    .feature { background:#1c1c1c; padding:20px; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.3); }
+    .btn { display:inline-block; margin-top:20px; background:#fff; color:#000; padding:14px 24px; border-radius:10px; text-decoration:none; font-weight:600; }
+    form { display:grid; gap:10px; margin-top:20px; }
+    input,textarea { padding:10px; font-size:16px; border:none; border-radius:8px; }
+    button { padding:12px; font-size:16px; border:none; background:#fff; color:#000; border-radius:8px; cursor:pointer; }
+    footer { background:#111; text-align:center; padding:20px; font-size:14px; margin-top:40px;}
   </style>
 </head>
 <body>
@@ -77,67 +25,63 @@
     <a href="#hero">Главная</a>
     <a href="#about">Обо мне</a>
     <a href="#services">Что делаю</a>
+    <a href="#why">Почему я</a>
     <a href="#contact">Контакты</a>
   </header>
 
   <section id="hero">
     <h1>Верстаю сайты под ключ</h1>
-    <p>HTML / CSS / JS / адаптив — быстро и аккуратно</p>
+    <p>HTML / CSS / JS / адаптив — аккуратно и вовремя</p>
+    <a href="#contact" class="btn">Оставить запрос</a>
   </section>
 
   <section id="about">
     <h2>Обо мне</h2>
-    <p>Меня зовут Бехруз, мне 15 лет. Я начинающий фронтенд-разработчик. Делаю адаптивные сайты с чистым кодом и современным дизайном. Готов к работе и новым заказам.</p>
+    <p>Меня зовут Бехруз, мне 15 лет. Я начинающий фронтенд-разработчик. Верстаю адаптивные сайты с нуля, быстро и качественно. Всегда на связи и готов обсудить детали.</p>
   </section>
 
   <section id="services">
-    <h2>Что я умею</h2>
+    <h2>Что я делаю</h2>
     <div class="features">
-      <div class="feature">
-        <h3>HTML / CSS</h3>
-        <p>Чистая и аккуратная вёрстка по макету (Figma, PNG)</p>
-      </div>
-      <div class="feature">
-        <h3>Адаптив</h3>
-        <p>Сайт будет красиво выглядеть на телефоне и компьютере</p>
-      </div>
-      <div class="feature">
-        <h3>JavaScript</h3>
-        <p>Интерактив: меню, плавный скролл, формы, анимации</p>
-      </div>
+      <div class="feature"><h3>✅ Лендинг с нуля</h3><p>Вёрстка одностраничного сайта по макету или дизайну.</p></div>
+      <div class="feature"><h3>📱 Адаптив</h3><p>Сайт отлично работает на телефоне, планшете и ПК.</p></div>
+      <div class="feature"><h3>⚙️ JS-эффекты</h3><p>Плавный скролл, кнопки, меню и форма, которая пишет тебе в Telegram.</p></div>
+    </div>
+    <div style="text-align:center; margin-top:20px;">
+      <a href="https://t.me/be3ru9" class="btn" target="_blank">💬 Написать в Telegram</a>
+    </div>
+  </section>
+
+  <section id="why">
+    <h2>Почему стоит выбрать меня</h2>
+    <div class="features">
+      <div class="feature"><h3>🔝 Ответственность</h3><p>Сдаю работу вовремя и без правок.</p></div>
+      <div class="feature"><h3>💬 Простота общения</h3><p>Объясняю понятным языком, всегда на связи.</p></div>
+      <div class="feature"><h3>🚀 Результат</h3><p>Красивый, адаптивный и функциональный сайт — готов к коммерческому использованию.</p></div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Связаться со мной</h2>
+    <h2>Связаться</h2>
     <form onsubmit="sendTelegram(); return false;">
       <input type="text" id="name" placeholder="Ваше имя" required>
       <input type="email" id="email" placeholder="Ваш Email" required>
-      <textarea id="message" rows="4" placeholder="Ваше сообщение" required></textarea>
+      <textarea id="message" rows="4" placeholder="Коротко, что нужно" required></textarea>
       <button type="submit">Отправить заявку</button>
     </form>
   </section>
 
-  <footer>
-    © 2025 Behruz.dev | Telegram: @be3ru9
-  </footer>
+  <footer>© 2025 Behruz.dev | Telegram: @be3ru9</footer>
 
   <script>
-    function sendTelegram() {
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-
-      const text = `📩 Новая заявка с сайта:%0A👤 Имя: ${name}%0A📧 Email: ${email}%0A💬 Сообщение: ${message}`;
-
-      fetch(`https://api.telegram.org/bot7856612058:AAGWjg11R9rYuU8-mehEmYfnLAhxiKaBLFQ/sendMessage?chat_id=7549755838&text=${text}`)
-        .then(() => {
-          alert("Заявка отправлена!");
-          document.querySelector("form").reset();
-        })
-        .catch(() => {
-          alert("Ошибка при отправке. Попробуйте позже.");
-        });
+    function sendTelegram(){
+      const name = encodeURIComponent(document.getElementById('name').value);
+      const email = encodeURIComponent(document.getElementById('email').value);
+      const message = encodeURIComponent(document.getElementById('message').value);
+      const text = `📩 Заявка:%0A👤 ${name}%0A📧 ${email}%0A💬 ${message}`;
+      fetch(`https://api.telegram.org/bot7856612058:AAGWjg11R9rYuU8-mehEmYfnLAhxiKaBLFQ/sendMessage?chat_id=7549755838&text=${text}`);
+      alert('Заявка отправлена!');
+      document.querySelector('form').reset();
     }
   </script>
 </body>
