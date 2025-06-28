@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Behruz.dev — Верстка сайтов</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      color: #fff;
+    }
+    .features {
+      display: grid;
+      gap: 20px;
+    }
+    .feature {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+    form {
+      display: grid;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      background: #fff;
+      color: #000;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#hero">Главная</a>
+    <a href="#about">Обо мне</a>
+    <a href="#services">Что делаю</a>
+    <a href="#contact">Контакты</a>
+  </header>
+
+  <section id="hero">
+    <h1>Верстаю сайты под ключ</h1>
+    <p>HTML / CSS / JS / адаптив — быстро и аккуратно</p>
+  </section>
+
+  <section id="about">
+    <h2>Обо мне</h2>
+    <p>Меня зовут Бехруз, мне 15 лет. Я начинающий фронтенд-разработчик. Делаю адаптивные сайты с чистым кодом и современным дизайном. Готов к работе и новым заказам.</p>
+  </section>
+
+  <section id="services">
+    <h2>Что я умею</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>HTML / CSS</h3>
+        <p>Чистая и аккуратная вёрстка по макету (Figma, PNG)</p>
+      </div>
+      <div class="feature">
+        <h3>Адаптив</h3>
+        <p>Сайт будет красиво выглядеть на телефоне и компьютере</p>
+      </div>
+      <div class="feature">
+        <h3>JavaScript</h3>
+        <p>Интерактив: меню, плавный скролл, формы, анимации</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Связаться со мной</h2>
+    <form onsubmit="sendTelegram(); return false;">
+      <input type="text" id="name" placeholder="Ваше имя" required>
+      <input type="email" id="email" placeholder="Ваш Email" required>
+      <textarea id="message" rows="4" placeholder="Ваше сообщение" required></textarea>
+      <button type="submit">Отправить заявку</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Behruz.dev | Telegram: @be3ru9
+  </footer>
+
+  <script>
+    function sendTelegram() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      const text = `\\n📩 Новая заявка с сайта:\\n👤 Имя: ${name}\\n📧 Email: ${email}\\n💬 Сообщение: ${message}`;
+
+      fetch('https://formspree.io/f/mknldnjv', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message
+        })
+      });
+
+      alert('Форма отправлена!');
+      document.querySelector('form').reset();
+    }
+  </script>
+</body>
+</html>
