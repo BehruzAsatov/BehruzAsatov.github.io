@@ -124,26 +124,20 @@
 
   <script>
     function sendTelegram() {
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
 
-      const text = `\\n📩 Новая заявка с сайта:\\n👤 Имя: ${name}\\n📧 Email: ${email}\\n💬 Сообщение: ${message}`;
+      const text = `📩 Новая заявка с сайта:%0A👤 Имя: ${name}%0A📧 Email: ${email}%0A💬 Сообщение: ${message}`;
 
-      fetch('https://formspree.io/f/mknldnjv', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          message: message
+      fetch(`https://api.telegram.org/bot7856612058:AAGWjg11R9rYuU8-mehEmYfnLAhxiKaBLFQ/sendMessage?chat_id=7549755838&text=${text}`)
+        .then(() => {
+          alert("Заявка отправлена!");
+          document.querySelector("form").reset();
         })
-      });
-
-      alert('Форма отправлена!');
-      document.querySelector('form').reset();
+        .catch(() => {
+          alert("Ошибка при отправке. Попробуйте позже.");
+        });
     }
   </script>
 </body>
